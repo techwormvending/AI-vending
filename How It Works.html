@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Techworm Vending</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        nav {
+            background: #2d3748;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #667eea;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        section {
+            padding: 4rem 2rem;
+        }
+        
+        section:nth-child(even) {
+            background: #f7fafc;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #2d3748;
+        }
+        
+        .intro-text {
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            line-height: 1.8;
+        }
+        
+        .steps-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .step-card {
+            display: grid;
+            grid-template-columns: 120px 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        
+        .step-number-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .step-icon {
+            font-size: 2.5rem;
+        }
+        
+        .step-content h3 {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .step-content p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .step-details {
+            background: #f7fafc;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+        
+        .step-details ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .step-details li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .step-details li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .video-section {
+            text-align: center;
+            background: white;
+        }
+        
+        .video-placeholder {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 4rem;
+            color: white;
+        }
+        
+        .video-placeholder h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .faq-section {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        .faq-question {
+            color: #667eea;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        .faq-answer {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .tech-behind {
+            background: #f7fafc;
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .tech-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .tech-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .tech-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .step-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .step-number-box {
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <h1>How It Works</h1>
+            <p style="font-size: 1.2rem;">Getting started is as easy as 1-2-3-4</p>
+        </div>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <div class="container">
+            <h2>Simple, Fast, Effortless</h2>
+            <p class="intro-text">
+                Using Techworm Vending is incredibly simple. Our AI-powered system handles everything 
+                automatically, so you can focus on what matters - getting back to your day refreshed 
+                and energized. Here's how it works in four easy steps:
+            </p>
+
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number-box">
+                        <div class="step-number">1</div>
+                        <div class="step-icon">📱</div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Scan the QR Code</h3>
+                        <p>
+                            Find the QR code displayed on the front of the Techworm Vending machine. 
+                            Open your phone's camera or WhatsApp and scan the code to begin.
+                        </p>
+                        <div class="step-details">
+                            <ul>
+                                <li>First-time users: Register with your phone number</li>
+                                <li>Returning customers: Automatic login recognition</li>
+                                <li>Add payment method securely (one-time setup)</li>
+                                <li>Takes less than 60 seconds to set up</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number-box">
+                        <div class="step-number">2</div>
+                        <div class="step-icon">🚪</div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Open & Browse</h3>
+                        <p>
+                            Once authenticated, simply open the refrigerator door. Browse through our 
+                            selection of fresh snacks, drinks, and treats - everything is clearly visible 
+                            and organized.
+                        </p>
+                        <div class="step-details">
+                            <ul>
+                                <li>No rushing - take your time to choose</li>
+                                <li>See all items clearly before selecting</li>
+                                <li>Check expiration dates and nutritional info</li>
+                                <li>Multiple people can shop at the same time</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number-box">
+                        <div class="step-number">3</div>
+                        <div class="step-icon">✋</div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Take What You Want</h3>
+                        <p>
+                            Pick up the items you want - our AI cameras are watching and will automatically 
+                            detect everything you take. Changed your mind? Just put it back!
+                        </p>
+                        <div class="step-details">
+                            <ul>
+                                <li>AI recognizes products instantly</li>
+                                <li>Take multiple items if needed</li>
+                                <li>Return items if you change your mind</li>
+                                <li>Works even if you turn items around</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number-box">
+                        <div class="step-number">4</div>
+                        <div class="step-icon">✅</div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Close Door & Go</h3>
+                        <p>
+                            Close the refrigerator door and you're done! You'll be automatically charged 
+                            for what you took and receive an instant receipt via WhatsApp. That's it!
+                        </p>
+                        <div class="step-details">
+                            <ul>
+                                <li>Automatic charge to your saved payment method</li>
+                                <li>Digital receipt sent immediately</li>
+                                <li>View transaction history anytime</li>
+                                <li>Entire process takes under 30 seconds</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section">
+        <div class="container">
+            <h2>See It In Action</h2>
+            <div class="video-placeholder">
+                <h3>🎥 Demo Video Coming Soon</h3>
+                <p style="font-size: 1.2rem;">
+                    Watch how easy it is to use Techworm Vending in real-time. 
+                    From scanning to grabbing to going - all in under a minute!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="tech-behind">
+        <div class="container">
+            <h2>The Technology Behind the Magic</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <span class="tech-icon">👁️</span>
+                    <h3>Computer Vision</h3>
+                    <p>
+                        Multiple AI-powered cameras track every movement inside the fridge, identifying 
+                        products with 99.9% accuracy in real-time.
+                    </p>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-icon">🧠</span>
+                    <h3>Machine Learning</h3>
+                    <p>
+                        Our system continuously learns and improves, adapting to new products and 
+                        becoming more accurate with every transaction.
+                    </p>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-icon">⚖️</span>
+                    <h3>Weight Sensors</h3>
+                    <p>
+                        Advanced sensors verify that products are actually removed, providing an 
+                        additional layer of accuracy to the AI vision system.
+                    </p>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-icon">☁️</span>
+                    <h3>Cloud Processing</h3>
+                    <p>
+                        Lightning-fast cloud computing processes all data instantly, ensuring your 
+                        transaction is complete in seconds.
+                    </p>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-icon">🔐</span>
+                    <h3>Secure Payments</h3>
+                    <p>
+                        Bank-level encryption protects your payment information, with PCI-compliant 
+                        processing for total peace of mind.
+                    </p>
+                </div>
+                <div class="tech-card">
+                    <span class="tech-icon">📊</span>
+                    <h3>Smart Analytics</h3>
+                    <p>
+                        Our system tracks inventory in real-time and predicts restocking needs to 
+                        ensure your favorites are always available.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">Q: What if I accidentally take the wrong item?</div>
+                    <div class="faq-answer">
+                        No problem! Just put it back before closing the door. Our AI will recognize 
+                        that you returned it and won't charge you for it.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q: How long does the whole process take?</div>
+                    <div class="faq-answer">
+                        From scanning the QR code to walking away with your items typically takes 
+                        less than 30 seconds. First-time setup takes about 60 seconds.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q: What payment methods do you accept?</div>
+                    <div class="faq-answer">
+                        We accept all major credit and debit cards. Your payment information is 
+                        securely stored and encrypted for fast, safe transactions.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q: Can I see my purchase history?</div>
+                    <div class="faq-answer">
+                        Absolutely! All your transactions are stored in your account and you'll 
+                        receive a digital receipt via WhatsApp after each purchase.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q: What if the AI makes a mistake?</div>
+                    <div class="faq-answer">
+                        Our system has 99.9% accuracy, but if there's ever an issue, simply contact 
+                        us via WhatsApp and we'll resolve it immediately with a full refund if needed.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q: Is my personal information safe?</div>
+                    <div class="faq-answer">
+                        Yes! We use bank-level encryption and are fully PCI-compliant. Your data 
+                        is secure and we never share your information with third parties.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q: Do I need to download an app?</div>
+                    <div class="faq-answer">
+                        Nope! Everything works through WhatsApp, which you probably already have. 
+                        No additional apps to download or accounts to create.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Q: What happens if I can't access WhatsApp?</div>
+                    <div class="faq-answer">
+                        While WhatsApp is our primary interface, you can also call us at 
+                        (412) 779-9809 for assistance or alternative access methods.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="color: white;">Ready to Try It Yourself?</h2>
+            <p style="font-size: 1.2rem;">
+                Experience the future of vending at a Techworm machine near you, 
+                or bring one to your location today!
+            </p>
+            <a href="index.html#contact" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Techworm Vending. All rights reserved.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">AI-Powered Smart Vending Solutions | Pittsburgh, PA</p>
+        </div>
+    </footer>
+</body>
+</html>
