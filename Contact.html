@@ -84,6 +84,25 @@
             color: #2d3748;
         }
         
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin: 2rem auto 3rem;
+        }
+
+        .logo-container img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        
         .contact-methods {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -245,43 +264,30 @@
             font-size: 1.1rem;
             line-height: 1.8;
         }
-        
-        .map-section {
-            text-align: center;
+
+        .machine-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
         }
-        
-        .map-placeholder {
-            max-width: 900px;
-            margin: 2rem auto;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+        .machine-image {
             border-radius: 15px;
-            padding: 4rem;
-            color: white;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
         }
-        
-        .locations-list {
-            max-width: 800px;
-            margin: 2rem auto;
-            text-align: left;
+
+        .machine-image:hover {
+            transform: translateY(-5px);
         }
-        
-        .location-item {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            margin-bottom: 1.5rem;
-        }
-        
-        .location-item h4 {
-            color: #667eea;
-            margin-bottom: 0.5rem;
-            font-size: 1.4rem;
-        }
-        
-        .location-item p {
-            font-size: 1.1rem;
-            color: #666;
+
+        .machine-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
         }
         
         footer {
@@ -327,6 +333,11 @@
     <section>
         <div class="container">
             <h2>Contact Us</h2>
+            
+            <div class="logo-container">
+                <img src="logo.jpg" alt="Techworm Vending Logo">
+            </div>
+
             <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 3rem;">
                 Whether you're interested in bringing Techworm Vending to your location, have questions about 
                 our technology, or need support, we're here to help!
@@ -422,32 +433,23 @@
         </div>
     </section>
 
-    <section class="map-section" style="background: #f7fafc;">
+    <section style="background: #f7fafc;">
         <div class="container">
-            <h2>Our Locations</h2>
-            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">
-                Find a Techworm Vending machine near you
+            <h2>Our Smart Vending Solutions</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                See what makes Techworm Vending different
             </p>
 
-            <div class="locations-list">
-                <div class="location-item">
-                    <h4>🎵 Music Studio Location</h4>
-                    <p><strong>Status:</strong> Active</p>
-                    <p><strong>Available:</strong> 24/7</p>
-                    <p>Our flagship location serving creative professionals in Pittsburgh</p>
+            <div class="machine-gallery">
+                <div class="machine-image">
+                    <img src="machine-front.jpg" alt="Techworm Vending Machine">
                 </div>
-
-                <div class="location-item">
-                    <h4>📍 Coming Soon</h4>
-                    <p>We're expanding to new locations! Contact us to bring Techworm Vending to your workplace, gym, or studio.</p>
+                <div class="machine-image">
+                    <img src="machine-open.jpg" alt="Techworm Machine Stocked">
                 </div>
-            </div>
-
-            <div class="map-placeholder">
-                <h3>🗺️ Interactive Map Coming Soon</h3>
-                <p style="font-size: 1.1rem;">
-                    Find all Techworm Vending locations on our interactive map
-                </p>
+                <div class="machine-image">
+                    <img src="machine-products.jpg" alt="Techworm Product Selection">
+                </div>
             </div>
         </div>
     </section>

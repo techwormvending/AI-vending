@@ -91,6 +91,19 @@
             margin: 0 auto 4rem;
             line-height: 1.8;
         }
+
+        .logo-container {
+            text-align: center;
+            margin: 0 auto 4rem;
+        }
+
+        .logo-container img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
         
         .steps-container {
             max-width: 900px;
@@ -175,6 +188,31 @@
             left: 0;
             color: #667eea;
             font-weight: bold;
+        }
+
+        .machine-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .machine-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .machine-image:hover {
+            transform: translateY(-5px);
+        }
+
+        .machine-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
         }
         
         .video-section {
@@ -316,13 +354,18 @@
             <li><a href="about.html">About</a></li>
             <li><a href="features.html">Features</a></li>
             <li><a href="how-it-works.html">How It Works</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <section>
         <div class="container">
             <h2>Simple, Fast, Effortless</h2>
+
+            <div class="logo-container">
+                <img src="logo.jpg" alt="Techworm Vending Logo">
+            </div>
+
             <p class="intro-text">
                 Using Techworm Vending is incredibly simple. Our AI-powered system handles everything 
                 automatically, so you can focus on what matters - getting back to your day refreshed 
@@ -417,6 +460,26 @@
                             </ul>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: #f7fafc;">
+        <div class="container">
+            <h2>See Our Machines in Action</h2>
+            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem;">
+                Our AI-powered smart refrigerators make vending effortless
+            </p>
+            <div class="machine-showcase">
+                <div class="machine-image">
+                    <img src="machine-front.jpg" alt="Techworm Vending Machine">
+                </div>
+                <div class="machine-image">
+                    <img src="machine-open.jpg" alt="Techworm Machine Open">
+                </div>
+                <div class="machine-image">
+                    <img src="machine-products.jpg" alt="Product Selection">
                 </div>
             </div>
         </div>
@@ -569,7 +632,7 @@
                 Experience the future of vending at a Techworm machine near you, 
                 or bring one to your location today!
             </p>
-            <a href="index.html#contact" class="cta-button">Get In Touch</a>
+            <a href="contact.html" class="cta-button">Get In Touch</a>
         </div>
     </section>
 

@@ -102,6 +102,51 @@
             max-width: 900px;
             margin: 0 auto;
         }
+
+        .logo-container {
+            text-align: center;
+            margin: 3rem auto;
+        }
+
+        .logo-container img {
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .machine-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .machine-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .machine-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .machine-caption {
+            background: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .machine-caption h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
         
         .mission-vision {
             display: grid;
@@ -268,16 +313,21 @@
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="index.html#features">Features</a></li>
-            <li><a href="index.html#how-it-works">How It Works</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
     <section id="story" class="story-section">
         <div class="container">
             <div class="story-content">
-                <h2>Our Story</h2>
+                <h2 style="text-align: center;">Our Story</h2>
+                
+                <div class="logo-container">
+                    <img src="logo.jpg" alt="Techworm Vending Logo">
+                </div>
+
                 <p>
                     Techworm Vending was born from a simple observation: traditional vending machines are stuck in the past. 
                     We saw people fumbling with coins, dealing with jammed machines, and missing out on the convenience that 
@@ -294,12 +344,36 @@
                     has been incredible, and we're excited to bring this innovation to more locations.
                 </p>
             </div>
+
+            <div class="machine-showcase">
+                <div class="machine-image">
+                    <img src="machine-front.jpg" alt="Techworm Vending Machine">
+                    <div class="machine-caption">
+                        <h4>Our Smart Refrigerators</h4>
+                        <p>Glass-front design for easy browsing</p>
+                    </div>
+                </div>
+                <div class="machine-image">
+                    <img src="machine-open.jpg" alt="Techworm Machine Open">
+                    <div class="machine-caption">
+                        <h4>Always Stocked</h4>
+                        <p>Fresh snacks and drinks available 24/7</p>
+                    </div>
+                </div>
+                <div class="machine-image">
+                    <img src="machine-products.jpg" alt="Product Selection">
+                    <div class="machine-caption">
+                        <h4>Wide Variety</h4>
+                        <p>Something for everyone's taste</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="mission">
         <div class="container">
-            <h2>Mission & Vision</h2>
+            <h2 style="text-align: center;">Mission & Vision</h2>
             <div class="mission-vision">
                 <div class="mission-box">
                     <h3>🎯 Our Mission</h3>
@@ -330,7 +404,7 @@
 
     <section id="values">
         <div class="container">
-            <h2>Our Core Values</h2>
+            <h2 style="text-align: center;">Our Core Values</h2>
             <div class="values-grid">
                 <div class="value-card">
                     <div class="value-icon">🤝</div>
@@ -368,7 +442,7 @@
 
     <section id="journey" class="story-section">
         <div class="container">
-            <h2>Our Journey</h2>
+            <h2 style="text-align: center;">Our Journey</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
@@ -413,7 +487,7 @@
                 Interested in bringing Techworm Vending to your location? Have questions about our technology? 
                 We'd love to hear from you!
             </p>
-            <a href="index.html#contact" class="cta-button">Get In Touch</a>
+            <a href="contact.html" class="cta-button">Get In Touch</a>
         </div>
     </section>
 
