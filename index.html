@@ -104,6 +104,82 @@
             text-align: center;
             color: #2d3748;
         }
+
+        /* Gallery Section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            background: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .gallery-caption h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Showcase Section */
+        .showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .showcase-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .showcase-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .showcase-content h3 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .showcase-content p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .showcase:nth-child(even) .showcase-image {
+            order: 2;
+        }
         
         .features {
             display: grid;
@@ -230,6 +306,14 @@
                 margin-left: 0;
                 margin-top: 1rem;
             }
+
+            .showcase {
+                grid-template-columns: 1fr;
+            }
+
+            .showcase:nth-child(even) .showcase-image {
+                order: 1;
+            }
         }
     </style>
 </head>
@@ -245,19 +329,57 @@
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
             <li><a href="#features">Features</a></li>
             <li><a href="#how-it-works">How It Works</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
+    <section id="gallery">
+        <div class="container">
+            <h2>See Our Smart Vending Machines</h2>
+            <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem;">
+                Experience the future of vending with our sleek, AI-powered refrigerators
+            </p>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="machine-front.jpg" alt="Techworm Vending Machine Front View">
+                    <div class="gallery-caption">
+                        <h3>Sleek Design</h3>
+                        <p>Modern glass-front display for easy product visibility</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="machine-open.jpg" alt="Techworm Vending Machine Open">
+                    <div class="gallery-caption">
+                        <h3>Fully Stocked</h3>
+                        <p>Wide variety of snacks, drinks, and refreshments</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="machine-products.jpg" alt="Techworm Vending Machine Products">
+                    <div class="gallery-caption">
+                        <h3>Premium Selection</h3>
+                        <p>Popular brands and fresh options available 24/7</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="about">
         <div class="container">
             <h2>Welcome to the Future of Vending</h2>
-            <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+            
+            <div style="text-align: center; margin: 3rem auto;">
+                <img src="logo.jpg" alt="Techworm Vending Logo" style="max-width: 400px; width: 100%; height: auto; border-radius: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.1);">
+            </div>
+            
+            <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 2rem auto 0;">
                 Techworm Vending revolutionizes the vending experience with AI-powered smart refrigerators. 
                 Simply take what you need, and our intelligent system handles the rest. No buttons, no hassle – 
-                just grab and go!
+                just grab and go! Our advanced computer vision technology recognizes what you take and charges you automatically.
             </p>
         </div>
     </section>
