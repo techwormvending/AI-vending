@@ -17,13 +17,6 @@
             color: #333;
         }
         
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        
         nav {
             background: #2d3748;
             padding: 1rem;
@@ -79,14 +72,9 @@
         
         h2 {
             font-size: 2.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
             color: #2d3748;
-        }
-        
-        h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #667eea;
         }
 
         .logo-container {
@@ -138,99 +126,48 @@
             margin-bottom: 0.5rem;
             font-size: 1.3rem;
         }
-        
-        .feature-section {
+
+        .features-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            margin-bottom: 4rem;
-        }
-        
-        .feature-section:nth-child(even) .feature-content {
-            order: 2;
-        }
-        
-        .feature-section:nth-child(even) .feature-visual {
-            order: 1;
-        }
-        
-        .feature-visual {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 15px;
-            padding: 3rem;
-            text-align: center;
-            color: white;
-            font-size: 5rem;
-            min-height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .feature-content h3 {
-            margin-bottom: 1.5rem;
-        }
-        
-        .feature-content p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-        
-        .feature-list {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-        
-        .feature-list li {
-            padding: 0.8rem 0;
-            padding-left: 2rem;
-            position: relative;
-            font-size: 1.1rem;
-        }
-        
-        .feature-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-        
-        .tech-specs {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             margin-top: 3rem;
         }
-        
-        .specs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .spec-item {
-            padding: 1.5rem;
-            background: #f7fafc;
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
             border-radius: 10px;
-            border-left: 4px solid #667eea;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
         }
-        
-        .spec-item h4 {
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
             color: #667eea;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
-        
+
+        .feature-card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
         .comparison {
             margin-top: 3rem;
         }
-        
+
         .comparison-table {
             width: 100%;
             border-collapse: collapse;
@@ -240,7 +177,7 @@
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        
+
         .comparison-table th {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -248,37 +185,38 @@
             text-align: left;
             font-size: 1.2rem;
         }
-        
+
         .comparison-table td {
             padding: 1.5rem;
             border-bottom: 1px solid #e2e8f0;
+            font-size: 1.1rem;
         }
-        
+
         .comparison-table tr:last-child td {
             border-bottom: none;
         }
-        
+
         .comparison-table tr:hover {
             background: #f7fafc;
         }
-        
+
         .check {
             color: #48bb78;
             font-size: 1.5rem;
         }
-        
+
         .cross {
             color: #f56565;
             font-size: 1.5rem;
         }
-        
+
         .cta-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-align: center;
             padding: 4rem 2rem;
         }
-        
+
         .cta-button {
             display: inline-block;
             background: white;
@@ -290,43 +228,26 @@
             margin-top: 1rem;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
+
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
-        
+
         footer {
             background: #2d3748;
             color: white;
             text-align: center;
             padding: 2rem;
         }
-        
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
             }
-            
+
             h2 {
                 font-size: 2rem;
-            }
-            
-            .feature-section {
-                grid-template-columns: 1fr;
-            }
-            
-            .feature-section:nth-child(even) .feature-content {
-                order: 1;
-            }
-            
-            .feature-section:nth-child(even) .feature-visual {
-                order: 2;
-            }
-            
-            .feature-visual {
-                font-size: 3rem;
-                min-height: 200px;
             }
         }
     </style>
@@ -334,8 +255,8 @@
 <body>
     <div class="hero">
         <div class="container">
-            <h1>Powerful Features</h1>
-            <p style="font-size: 1.2rem;">Experience the Next Generation of Vending Technology</p>
+            <h1>Features</h1>
+            <p style="font-size: 1.2rem;">Why Techworm Vending is Different</p>
         </div>
     </div>
 
@@ -351,7 +272,7 @@
 
     <section>
         <div class="container">
-            <h2 style="text-align: center;">See Our Smart Vending Machines</h2>
+            <h2>Our Smart Vending Machines</h2>
 
             <div class="logo-container">
                 <img src="logo.jpg" alt="Techworm Vending Logo">
@@ -383,119 +304,54 @@
         </div>
     </section>
 
-    <section style="background: #f7fafc;">
+    <section>
         <div class="container">
-            <div class="feature-section">
-                <div class="feature-content">
-                    <h3>🤖 AI-Powered Recognition</h3>
-                    <p>
-                        Our cutting-edge artificial intelligence system uses computer vision and machine learning 
-                        to instantly identify products as you take them from the fridge. No scanning required!
-                    </p>
-                    <ul class="feature-list">
-                        <li>Real-time product detection with 99.9% accuracy</li>
-                        <li>Recognizes products regardless of orientation</li>
-                        <li>Learns and improves with every transaction</li>
-                        <li>Handles multiple items simultaneously</li>
-                    </ul>
+            <h2>What Makes Us Different</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Recognition</h3>
+                    <p>Advanced artificial intelligence automatically detects what you take and charges you accordingly with 99.9% accuracy.</p>
                 </div>
-                <div class="feature-visual">
-                    🤖
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightning Fast</h3>
+                    <p>No scanning, no buttons, no waiting. Just insert your card, take what you want, and go. Under 30 seconds total.</p>
                 </div>
-            </div>
-
-            <div class="feature-section">
-                <div class="feature-content">
-                    <h3>⚡ Instant & Seamless Experience</h3>
-                    <p>
-                        Say goodbye to buttons, touch screens, and payment terminals. Our grab-and-go technology 
-                        makes getting refreshments as easy as opening your home refrigerator.
-                    </p>
-                    <ul class="feature-list">
-                        <li>Zero wait time - just open and take</li>
-                        <li>No checkout process needed</li>
-                        <li>Automatic payment processing</li>
-                        <li>Receipt sent directly to your phone</li>
-                    </ul>
+                <div class="feature-card">
+                    <div class="feature-icon">🕐</div>
+                    <h3>24/7 Availability</h3>
+                    <p>Access fresh snacks and drinks anytime, day or night. Our machines never close.</p>
                 </div>
-                <div class="feature-visual">
-                    ⚡
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Secure Payment</h3>
+                    <p>Bank-level encryption and PCI-compliant payment processing for your peace of mind.</p>
                 </div>
-            </div>
-
-            <div class="feature-section">
-                <div class="feature-content">
-                    <h3>🔒 Secure & Trust-Based</h3>
-                    <p>
-                        Built on a foundation of trust and secured by enterprise-grade encryption. Your data 
-                        and payment information are always protected.
-                    </p>
-                    <ul class="feature-list">
-                        <li>Bank-level security encryption</li>
-                        <li>PCI-compliant payment processing</li>
-                        <li>Privacy-focused design</li>
-                        <li>Transparent pricing - no hidden fees</li>
-                    </ul>
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3>Easy Payment</h3>
+                    <p>Insert card or tap to pay. Accepts all major credit and debit cards. No apps or accounts needed.</p>
                 </div>
-                <div class="feature-visual">
-                    🔒
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Smart Inventory</h3>
+                    <p>Our AI learns customer preferences and ensures your favorites are always stocked.</p>
                 </div>
-            </div>
-
-            <div class="feature-section">
-                <div class="feature-content">
-                    <h3>📱 Simple Payment System</h3>
-                    <p>
-                        Just insert or tap your card to pay. View all products and prices on the built-in 
-                        screen, then take what you need. Optional digital receipt via QR code.
-                    </p>
-                    <ul class="feature-list">
-                        <li>Card insert or tap-to-pay options</li>
-                        <li>Instant transaction confirmation</li>
-                        <li>Optional digital receipts via QR scan</li>
-                        <li>No apps or accounts required</li>
-                    </ul>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Digital Receipts</h3>
+                    <p>Scan the optional QR code after purchase to receive your receipt instantly on your phone.</p>
                 </div>
-                <div class="feature-visual">
-                    📱
+                <div class="feature-card">
+                    <div class="feature-icon">🌡️</div>
+                    <h3>Temperature Controlled</h3>
+                    <p>Professional-grade refrigeration keeps drinks cold and snacks fresh around the clock.</p>
                 </div>
-            </div>
-
-            <div class="feature-section">
-                <div class="feature-content">
-                    <h3>💡 Smart Inventory Management</h3>
-                    <p>
-                        Our AI doesn't just recognize products - it learns what customers love and ensures 
-                        the fridge is always stocked with your favorites.
-                    </p>
-                    <ul class="feature-list">
-                        <li>Predictive restocking based on demand</li>
-                        <li>Freshness tracking and rotation</li>
-                        <li>Customized inventory for each location</li>
-                        <li>Real-time stock level monitoring</li>
-                    </ul>
-                </div>
-                <div class="feature-visual">
-                    💡
-                </div>
-            </div>
-
-            <div class="feature-section">
-                <div class="feature-content">
-                    <h3>🌡️ Temperature Controlled</h3>
-                    <p>
-                        Professional-grade refrigeration ensures your drinks stay ice cold and your snacks 
-                        stay fresh, 24/7.
-                    </p>
-                    <ul class="feature-list">
-                        <li>Precise temperature control</li>
-                        <li>Energy-efficient cooling system</li>
-                        <li>Remote temperature monitoring</li>
-                        <li>Maintains optimal freshness</li>
-                    </ul>
-                </div>
-                <div class="feature-visual">
-                    🌡️
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>No Jams Ever</h3>
+                    <p>Take products directly from the shelf. Nothing gets stuck, nothing falls – guaranteed.</p>
                 </div>
             </div>
         </div>
@@ -503,46 +359,8 @@
 
     <section>
         <div class="container">
-            <h2 style="text-align: center; margin-bottom: 3rem;">Technical Specifications</h2>
-            <div class="tech-specs">
-                <div class="specs-grid">
-                    <div class="spec-item">
-                        <h4>Recognition Speed</h4>
-                        <p>Instant detection in under 1 second</p>
-                    </div>
-                    <div class="spec-item">
-                        <h4>Capacity</h4>
-                        <p>Up to 150 items per machine</p>
-                    </div>
-                    <div class="spec-item">
-                        <h4>Operating Hours</h4>
-                        <p>24/7 availability</p>
-                    </div>
-                    <div class="spec-item">
-                        <h4>Temperature Range</h4>
-                        <p>35°F - 40°F (optimal freshness)</p>
-                    </div>
-                    <div class="spec-item">
-                        <h4>Payment Methods</h4>
-                        <p>Credit/Debit cards via secure platform</p>
-                    </div>
-                    <div class="spec-item">
-                        <h4>User Interface</h4>
-                        <p>WhatsApp-based, no app required</p>
-                    </div>
-                    <div class="spec-item">
-                        <h4>Accuracy Rate</h4>
-                        <p>99.9% product recognition accuracy</p>
-                    </div>
-                    <div class="spec-item">
-                        <h4>Connectivity</h4>
-                        <p>Wi-Fi enabled with cloud sync</p>
-                    </div>
-                </div>
-            </div>
-
+            <h2>Techworm vs Traditional Vending</h2>
             <div class="comparison">
-                <h2 style="text-align: center; margin-bottom: 1rem;">Techworm vs Traditional Vending</h2>
                 <table class="comparison-table">
                     <thead>
                         <tr>
@@ -559,8 +377,8 @@
                         </tr>
                         <tr>
                             <td><strong>Payment Process</strong></td>
-                            <td><span class="check">✓</span> Automatic charging</td>
-                            <td><span class="cross">✗</span> Manual payment required</td>
+                            <td><span class="check">✓</span> Tap or insert card</td>
+                            <td><span class="cross">✗</span> Complicated interface</td>
                         </tr>
                         <tr>
                             <td><strong>Product Selection</strong></td>
@@ -569,8 +387,8 @@
                         </tr>
                         <tr>
                             <td><strong>Speed</strong></td>
-                            <td><span class="check">✓</span> Under 10 seconds</td>
-                            <td><span class="cross">✗</span> 30+ seconds average</td>
+                            <td><span class="check">✓</span> Under 30 seconds</td>
+                            <td><span class="cross">✗</span> 45+ seconds average</td>
                         </tr>
                         <tr>
                             <td><strong>Stuck Products</strong></td>
@@ -583,14 +401,14 @@
                             <td><span class="cross">✗</span> Often requires exact change</td>
                         </tr>
                         <tr>
-                            <td><strong>Smart Inventory</strong></td>
-                            <td><span class="check">✓</span> AI-powered stocking</td>
-                            <td><span class="cross">✗</span> Manual management</td>
+                            <td><strong>Technology</strong></td>
+                            <td><span class="check">✓</span> AI-powered</td>
+                            <td><span class="cross">✗</span> Mechanical systems</td>
                         </tr>
                         <tr>
-                            <td><strong>Transaction History</strong></td>
-                            <td><span class="check">✓</span> Digital receipts</td>
-                            <td><span class="cross">✗</span> Paper receipts (if any)</td>
+                            <td><strong>Receipts</strong></td>
+                            <td><span class="check">✓</span> Digital via QR code</td>
+                            <td><span class="cross">✗</span> Paper or none</td>
                         </tr>
                     </tbody>
                 </table>
@@ -600,11 +418,11 @@
 
     <section class="cta-section">
         <div class="container">
-            <h2 style="color: white;">Ready to Experience the Future?</h2>
+            <h2 style="color: white;">Experience the Future of Vending</h2>
             <p style="font-size: 1.2rem;">
-                Bring Techworm Vending to your location and give your customers the convenience they deserve.
+                Bring Techworm's smart vending solutions to your location today.
             </p>
-            <a href="contact.html" class="cta-button">Get Started Today</a>
+            <a href="contact.html" class="cta-button">Get Started</a>
         </div>
     </section>
 
@@ -612,6 +430,11 @@
         <div class="container">
             <p>&copy; 2025 Techworm Vending. All rights reserved.</p>
             <p style="margin-top: 0.5rem; font-size: 0.9rem;">AI-Powered Smart Vending Solutions | Pittsburgh, PA</p>
+            <p style="margin-top: 1rem;">
+                <a href="tel:4127799809" style="color: white; text-decoration: none;">📞 (412) 779-9809</a> | 
+                <a href="https://wa.me/14127799809" style="color: white; text-decoration: none;">📱 WhatsApp</a> | 
+                <a href="mailto:sales@techwormvending.com" style="color: white; text-decoration: none;">📧 Email</a>
+            </p>
         </div>
     </footer>
 </body>

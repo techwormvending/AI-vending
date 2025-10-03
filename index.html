@@ -17,13 +17,6 @@
             color: #333;
         }
         
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        
         nav {
             background: #2d3748;
             padding: 1rem;
@@ -60,34 +53,55 @@
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
             text-align: center;
         }
         
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
         }
         
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
         }
         
         .cta-button {
             display: inline-block;
             background: white;
             color: #667eea;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2.5rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 1.1rem;
             transition: transform 0.3s, box-shadow 0.3s;
         }
         
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .cta-button-secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .cta-button-secondary:hover {
+            background: white;
+            color: #667eea;
         }
         
         section {
@@ -105,7 +119,31 @@
             color: #2d3748;
         }
 
-        /* Gallery Section */
+        .intro-section {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .intro-section p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin: 3rem auto;
+        }
+
+        .logo-container img {
+            max-width: 450px;
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -142,44 +180,6 @@
             color: #667eea;
             margin-bottom: 0.5rem;
         }
-
-        /* Showcase Section */
-        .showcase {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            margin-top: 3rem;
-        }
-
-        .showcase-image {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-        }
-
-        .showcase-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .showcase-content h3 {
-            color: #667eea;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .showcase-content p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        .showcase:nth-child(even) .showcase-image {
-            order: 2;
-        }
         
         .features {
             display: grid;
@@ -194,6 +194,7 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             transition: transform 0.3s;
+            text-align: center;
         }
         
         .feature-card:hover {
@@ -209,10 +210,12 @@
         .feature-card h3 {
             color: #667eea;
             margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
-        
-        .how-it-works {
-            background: white;
+
+        .feature-card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
         }
         
         .steps {
@@ -225,65 +228,73 @@
         .step {
             text-align: center;
             padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
         
         .step-number {
             display: inline-block;
-            width: 60px;
-            height: 60px;
-            background: #667eea;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border-radius: 50%;
-            line-height: 60px;
-            font-size: 1.5rem;
+            line-height: 70px;
+            font-size: 1.8rem;
             font-weight: bold;
             margin-bottom: 1rem;
         }
-        
-        .contact {
+
+        .step h3 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .step p {
+            font-size: 1.1rem;
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
             text-align: center;
         }
-        
-        .contact-info {
-            margin-top: 2rem;
-            font-size: 1.2rem;
+
+        .contact-section h2 {
+            color: white;
         }
-        
-        .whatsapp-btn {
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-btn {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: #25D366;
-            color: white;
+            background: white;
+            color: #667eea;
             padding: 1rem 2rem;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 1rem;
+            font-size: 1.1rem;
             transition: transform 0.3s;
         }
-        
-        .whatsapp-btn:hover {
+
+        .contact-btn:hover {
             transform: scale(1.05);
         }
 
-        .phone-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: #667eea;
+        .whatsapp {
+            background: #25D366;
             color: white;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 1rem;
-            margin-left: 1rem;
-            transition: transform 0.3s;
-        }
-        
-        .phone-btn:hover {
-            transform: scale(1.05);
         }
         
         footer {
@@ -295,24 +306,15 @@
         
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
             }
             
             h2 {
                 font-size: 2rem;
-            }
-
-            .phone-btn {
-                margin-left: 0;
-                margin-top: 1rem;
-            }
-
-            .showcase {
-                grid-template-columns: 1fr;
-            }
-
-            .showcase:nth-child(even) .showcase-image {
-                order: 1;
             }
         }
     </style>
@@ -321,66 +323,76 @@
     <div class="hero">
         <div class="container">
             <h1>🤖 Techworm Vending</h1>
-            <p>AI-Powered Smart Vending</p>
-            <p style="font-size: 1rem; opacity: 0.9;">The Future of Self-Service | Available 24/7</p>
+            <p>AI-Powered Smart Vending for the Modern World</p>
+            <p style="font-size: 1.1rem;">Insert Card. Take Products. Done.</p>
+            
+            <div class="hero-buttons">
+                <a href="#how-it-works" class="cta-button">See How It Works</a>
+                <a href="contact.html" class="cta-button cta-button-secondary">Get Started</a>
+            </div>
         </div>
     </div>
 
     <nav>
         <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
 
+    <section id="about">
+        <div class="container">
+            <div class="intro-section">
+                <h2>The Future of Vending is Here</h2>
+                
+                <div class="logo-container">
+                    <img src="logo.jpg" alt="Techworm Vending Logo">
+                </div>
+
+                <p>
+                    Techworm Vending replaces outdated machines with AI-powered smart refrigerators. 
+                    No buttons, no hassle – just insert or tap your card, take what you want, and go.
+                </p>
+                <p>
+                    Our advanced computer vision technology automatically detects what you take and 
+                    charges you instantly. It's vending made simple.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <section id="gallery">
         <div class="container">
-            <h2>See Our Smart Vending Machines</h2>
+            <h2>Our Smart Vending Machines</h2>
             <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem;">
-                Experience the future of vending with our sleek, AI-powered refrigerators
+                Sleek, modern refrigerators powered by artificial intelligence
             </p>
             <div class="gallery">
                 <div class="gallery-item">
                     <img src="machine-front.jpg" alt="Techworm Vending Machine Front View">
                     <div class="gallery-caption">
-                        <h3>Sleek Design</h3>
-                        <p>Modern glass-front display for easy product visibility</p>
+                        <h3>Modern Design</h3>
+                        <p>Glass-front display with built-in payment terminal</p>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="machine-open.jpg" alt="Techworm Vending Machine Open">
                     <div class="gallery-caption">
-                        <h3>Fully Stocked</h3>
+                        <h3>Always Stocked</h3>
                         <p>Wide variety of snacks, drinks, and refreshments</p>
                     </div>
                 </div>
                 <div class="gallery-item">
                     <img src="machine-products.jpg" alt="Techworm Vending Machine Products">
                     <div class="gallery-caption">
-                        <h3>Premium Selection</h3>
-                        <p>Popular brands and fresh options available 24/7</p>
+                        <h3>Premium Products</h3>
+                        <p>Popular brands available 24/7</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <section id="about">
-        <div class="container">
-            <h2>Welcome to the Future of Vending</h2>
-            
-            <div style="text-align: center; margin: 3rem auto;">
-                <img src="logo.jpg" alt="Techworm Vending Logo" style="max-width: 400px; width: 100%; height: auto; border-radius: 15px; box-shadow: 0 8px 16px rgba(0,0,0,0.1);">
-            </div>
-            
-            <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 2rem auto 0;">
-                Techworm Vending revolutionizes the vending experience with AI-powered smart refrigerators. 
-                Simply take what you need, and our intelligent system handles the rest. No buttons, no hassle – 
-                just grab and go! Our advanced computer vision technology recognizes what you take and charges you automatically.
-            </p>
         </div>
     </section>
 
@@ -390,51 +402,54 @@
             <div class="features">
                 <div class="feature-card">
                     <div class="feature-icon">🤖</div>
-                    <h3>AI-Powered Recognition</h3>
-                    <p>Advanced artificial intelligence automatically detects what you take and charges you accordingly.</p>
+                    <h3>AI Recognition</h3>
+                    <p>Advanced AI automatically detects what you take and charges you instantly.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">⚡</div>
-                    <h3>Instant & Seamless</h3>
-                    <p>No scanning, no buttons. Just open, take, and go. It's that simple!</p>
+                    <h3>Lightning Fast</h3>
+                    <p>Insert card, grab items, go. The entire process takes under 30 seconds.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🕐</div>
-                    <h3>24/7 Availability</h3>
-                    <p>Access fresh snacks and drinks anytime, anywhere our machines are located.</p>
+                    <h3>24/7 Access</h3>
+                    <p>Always available whenever you need refreshments.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🔒</div>
-                    <h3>Secure & Reliable</h3>
-                    <p>Trust-based system with secure payment processing for your peace of mind.</p>
+                    <h3>Secure Payment</h3>
+                    <p>Bank-level encryption and PCI-compliant processing.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Perfect for Studios</h3>
-                    <p>Currently serving music studios with plans to expand to offices, gyms, and more.</p>
+                    <div class="feature-icon">💳</div>
+                    <h3>Easy Payment</h3>
+                    <p>Insert card or tap to pay – no apps or accounts needed.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">💡</div>
                     <h3>Smart Inventory</h3>
-                    <p>Always stocked with what you love. Our AI learns and adapts to customer preferences.</p>
+                    <p>Always stocked with what you love. Our AI learns preferences.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="how-it-works" class="how-it-works">
+    <section id="how-it-works">
         <div class="container">
             <h2>How It Works</h2>
+            <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem;">
+                Using Techworm Vending is incredibly simple
+            </p>
             <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
                     <h3>Insert or Tap Card</h3>
-                    <p>Insert your card or tap to pay on the screen</p>
+                    <p>Use the payment terminal to insert or tap your card</p>
                 </div>
                 <div class="step">
                     <div class="step-number">2</div>
                     <h3>Open & Take</h3>
-                    <p>Open the fridge and take what you want</p>
+                    <p>Door unlocks – browse and take what you want</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
@@ -444,31 +459,29 @@
                 <div class="step">
                     <div class="step-number">4</div>
                     <h3>Close & Done</h3>
-                    <p>Close the door and scan the QR code for your receipt</p>
+                    <p>Close the door and you're charged automatically</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
+    <section class="contact-section">
         <div class="container">
-            <h2>Get in Touch</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 1rem;">
-                Interested in having a Techworm Vending machine at your location?
+            <h2>Ready to Get Started?</h2>
+            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem;">
+                Bring Techworm Vending to your office, studio, gym, or facility. 
+                Contact us today to learn more!
             </p>
-            <p>Contact us today to learn more!</p>
-            <div>
-                <a href="https://wa.me/14127799809" class="whatsapp-btn">
+            <div class="contact-buttons">
+                <a href="https://wa.me/14127799809" class="contact-btn whatsapp">
                     <span>📱</span> WhatsApp Us
                 </a>
-                <a href="tel:4127799809" class="phone-btn">
+                <a href="tel:4127799809" class="contact-btn">
                     <span>📞</span> Call (412) 779-9809
                 </a>
-            </div>
-            <div class="contact-info">
-                <p><strong>Techworm Vending</strong></p>
-                <p>Pittsburgh, PA</p>
-                <p>Phone: (412) 779-9809</p>
+                <a href="mailto:sales@techwormvending.com" class="contact-btn">
+                    <span>📧</span> Email Us
+                </a>
             </div>
         </div>
     </section>
@@ -476,7 +489,12 @@
     <footer>
         <div class="container">
             <p>&copy; 2025 Techworm Vending. All rights reserved.</p>
-            <p style="margin-top: 0.5rem; font-size: 0.9rem;">AI-Powered Smart Vending Solutions</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">AI-Powered Smart Vending Solutions | Pittsburgh, PA</p>
+            <p style="margin-top: 1rem;">
+                <a href="tel:4127799809" style="color: white; text-decoration: none;">📞 (412) 779-9809</a> | 
+                <a href="https://wa.me/14127799809" style="color: white; text-decoration: none;">📱 WhatsApp</a> | 
+                <a href="mailto:sales@techwormvending.com" style="color: white; text-decoration: none;">📧 Email</a>
+            </p>
         </div>
     </footer>
 </body>
