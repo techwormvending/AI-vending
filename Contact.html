@@ -17,13 +17,6 @@
             color: #333;
         }
         
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        
         nav {
             background: #2d3748;
             padding: 1rem;
@@ -83,12 +76,6 @@
             text-align: center;
             color: #2d3748;
         }
-        
-        h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #667eea;
-        }
 
         .logo-container {
             text-align: center;
@@ -105,10 +92,10 @@
         
         .contact-methods {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
-            max-width: 1000px;
+            max-width: 900px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -167,77 +154,8 @@
         .whatsapp-button:hover {
             box-shadow: 0 8px 16px rgba(37, 211, 102, 0.4);
         }
-        
-        .form-section {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .contact-form {
-            background: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #2d3748;
-        }
-        
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
-        }
-        
-        .submit-button {
-            width: 100%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1.2rem;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .submit-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4);
-        }
-        
-        .info-section {
-            background: white;
-        }
-        
-        .info-grid {
+
+        .info-boxes {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
@@ -246,23 +164,23 @@
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .info-box {
-            background: #f7fafc;
+            background: white;
             padding: 2rem;
             border-radius: 10px;
-            border-left: 4px solid #667eea;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
         }
-        
+
         .info-box h4 {
             color: #667eea;
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
-        
+
         .info-box p {
             font-size: 1.1rem;
-            line-height: 1.8;
         }
 
         .machine-gallery {
@@ -289,6 +207,12 @@
             object-fit: cover;
             display: block;
         }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
         
         footer {
             background: #2d3748;
@@ -305,18 +229,14 @@
             h2 {
                 font-size: 2rem;
             }
-            
-            .contact-form {
-                padding: 2rem;
-            }
         }
     </style>
 </head>
 <body>
     <div class="hero">
         <div class="container">
-            <h1>Get In Touch</h1>
-            <p style="font-size: 1.2rem;">We'd love to hear from you!</p>
+            <h1>Contact Us</h1>
+            <p style="font-size: 1.2rem;">Let's talk about bringing Techworm to your location</p>
         </div>
     </div>
 
@@ -332,91 +252,41 @@
 
     <section>
         <div class="container">
-            <h2>Contact Us</h2>
+            <h2>Get In Touch</h2>
             
             <div class="logo-container">
                 <img src="logo.jpg" alt="Techworm Vending Logo">
             </div>
 
             <p style="text-align: center; font-size: 1.2rem; max-width: 800px; margin: 0 auto 3rem;">
-                Whether you're interested in bringing Techworm Vending to your location, have questions about 
-                our technology, or need support, we're here to help!
+                Interested in bringing Techworm Vending to your office, studio, gym, or facility? 
+                We'd love to discuss how our smart vending solutions can work for you.
             </p>
 
             <div class="contact-methods">
                 <div class="contact-card">
                     <div class="contact-icon">📱</div>
                     <h3>WhatsApp</h3>
-                    <p>Message us directly for the fastest response. We're available 24/7 to answer your questions.</p>
-                    <a href="https://wa.me/14127799809" class="contact-button whatsapp-button">Chat on WhatsApp</a>
+                    <p>Quick responses and easy communication</p>
+                    <a href="https://wa.me/14127799809" class="contact-button whatsapp-button">Message Us</a>
                 </div>
 
                 <div class="contact-card">
                     <div class="contact-icon">📞</div>
-                    <h3>Phone</h3>
-                    <p>Give us a call during business hours. We'd love to discuss how Techworm can serve you.</p>
+                    <h3>Call Us</h3>
+                    <p>Speak directly with our team</p>
                     <a href="tel:4127799809" class="contact-button">Call (412) 779-9809</a>
                 </div>
-
-                <div class="contact-card">
-                    <div class="contact-icon">📧</div>
-                    <h3>Email</h3>
-                    <p>Send us an email and we'll get back to you within 24 hours on business days.</p>
-                    <a href="mailto:info@techwormvending.com" class="contact-button">Send Email</a>
-                </div>
             </div>
         </div>
     </section>
 
-    <section style="background: #f7fafc;">
+    <section>
         <div class="container">
-            <h2>Send Us a Message</h2>
-            <div class="form-section">
-                <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required placeholder="John Doe">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required placeholder="john@example.com">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" placeholder="(412) 555-0123">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="subject">Subject *</label>
-                        <select id="subject" name="subject" required>
-                            <option value="">Select a subject</option>
-                            <option value="new-location">New Location Inquiry</option>
-                            <option value="partnership">Partnership Opportunity</option>
-                            <option value="support">Customer Support</option>
-                            <option value="general">General Question</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Message *</label>
-                        <textarea id="message" name="message" required placeholder="Tell us how we can help you..."></textarea>
-                    </div>
-
-                    <button type="submit" class="submit-button">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <section class="info-section">
-        <div class="container">
-            <h2>Business Information</h2>
-            <div class="info-grid">
+            <h2>Company Info</h2>
+            <div class="info-boxes">
                 <div class="info-box">
-                    <h4>📍 Location</h4>
+                    <h4>📍 Based In</h4>
                     <p>Pittsburgh, Pennsylvania</p>
                 </div>
 
@@ -426,18 +296,18 @@
                 </div>
 
                 <div class="info-box">
-                    <h4>⏰ Response Time</h4>
-                    <p>Within 24 hours on business days</p>
+                    <h4>⏰ Available</h4>
+                    <p>7 Days a Week</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section style="background: #f7fafc;">
+    <section>
         <div class="container">
-            <h2>Our Smart Vending Solutions</h2>
+            <h2>Our Machines</h2>
             <p style="text-align: center; font-size: 1.1rem; margin-bottom: 2rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-                See what makes Techworm Vending different
+                Sleek, AI-powered refrigerators that make vending simple
             </p>
 
             <div class="machine-gallery">
@@ -445,28 +315,28 @@
                     <img src="machine-front.jpg" alt="Techworm Vending Machine">
                 </div>
                 <div class="machine-image">
-                    <img src="machine-open.jpg" alt="Techworm Machine Stocked">
+                    <img src="machine-open.jpg" alt="Machine Stocked with Products">
                 </div>
                 <div class="machine-image">
-                    <img src="machine-products.jpg" alt="Techworm Product Selection">
+                    <img src="machine-products.jpg" alt="Product Selection">
                 </div>
             </div>
         </div>
     </section>
 
-    <section style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-        <div class="container" style="text-align: center;">
-            <h2 style="color: white;">Interested in Hosting a Machine?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-                Bring the convenience of AI-powered vending to your location. Perfect for offices, 
-                studios, gyms, co-working spaces, and more!
+    <section class="cta-section">
+        <div class="container">
+            <h2 style="color: white; margin-bottom: 1rem;">Ready to Get Started?</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Contact us today to learn about pricing, installation, and how Techworm Vending 
+                can benefit your location.
             </p>
             <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                 <a href="https://wa.me/14127799809" class="contact-button whatsapp-button">
-                    WhatsApp Us
+                    📱 WhatsApp
                 </a>
                 <a href="tel:4127799809" class="contact-button" style="background: white; color: #667eea;">
-                    Call Now
+                    📞 Call Now
                 </a>
             </div>
         </div>

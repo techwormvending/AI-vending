@@ -17,13 +17,6 @@
             color: #333;
         }
         
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        
         nav {
             background: #2d3748;
             padding: 1rem;
@@ -80,32 +73,13 @@
         h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
+            text-align: center;
             color: #2d3748;
-        }
-        
-        h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #667eea;
-        }
-        
-        p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .story-section {
-            background: white;
-        }
-        
-        .story-content {
-            max-width: 900px;
-            margin: 0 auto;
         }
 
         .logo-container {
             text-align: center;
-            margin: 3rem auto;
+            margin: 2rem auto 3rem;
         }
 
         .logo-container img {
@@ -114,6 +88,17 @@
             height: auto;
             border-radius: 15px;
             box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .content p {
+            margin-bottom: 1.5rem;
         }
 
         .machine-showcase {
@@ -127,6 +112,11 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .machine-image:hover {
+            transform: translateY(-5px);
         }
 
         .machine-image img {
@@ -136,122 +126,39 @@
             display: block;
         }
 
-        .machine-caption {
-            background: white;
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .machine-caption h4 {
-            color: #667eea;
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-        }
-        
-        .mission-vision {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-        
-        .mission-box, .vision-box {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        
-        .mission-box {
-            border-left: 5px solid #667eea;
-        }
-        
-        .vision-box {
-            border-left: 5px solid #764ba2;
-        }
-        
-        .values-grid {
+        .values {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
-        
+
         .value-card {
             background: white;
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             text-align: center;
-            transition: transform 0.3s;
         }
-        
-        .value-card:hover {
-            transform: translateY(-5px);
-        }
-        
+
         .value-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
-        
-        .timeline {
-            max-width: 800px;
-            margin: 3rem auto;
-            position: relative;
+
+        .value-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 4px;
-            height: 100%;
-            background: #667eea;
-        }
-        
-        .timeline-item {
-            margin-bottom: 3rem;
-            position: relative;
-        }
-        
-        .timeline-content {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            width: 45%;
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-content {
-            margin-left: 55%;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content {
-            margin-right: 55%;
-        }
-        
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            background: #667eea;
-            border: 4px solid white;
-            border-radius: 50%;
-            box-shadow: 0 0 0 4px #667eea;
-            top: 2rem;
-        }
-        
+
         .cta-section {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-align: center;
             padding: 4rem 2rem;
         }
-        
+
         .cta-button {
             display: inline-block;
             background: white;
@@ -263,7 +170,7 @@
             margin-top: 1rem;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
+
         .cta-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
@@ -284,20 +191,6 @@
             h2 {
                 font-size: 2rem;
             }
-            
-            .timeline::before {
-                left: 0;
-            }
-            
-            .timeline-content {
-                width: 100% !important;
-                margin-left: 2rem !important;
-                margin-right: 0 !important;
-            }
-            
-            .timeline-dot {
-                left: 0;
-            }
         }
     </style>
 </head>
@@ -305,7 +198,7 @@
     <div class="hero">
         <div class="container">
             <h1>About Techworm Vending</h1>
-            <p style="font-size: 1.2rem;">Revolutionizing Vending Through AI and Trust</p>
+            <p style="font-size: 1.2rem;">The Future of Smart Vending</p>
         </div>
     </div>
 
@@ -319,162 +212,69 @@
         </ul>
     </nav>
 
-    <section id="story" class="story-section">
+    <section>
         <div class="container">
-            <div class="story-content">
-                <h2 style="text-align: center;">Our Story</h2>
-                
-                <div class="logo-container">
-                    <img src="logo.jpg" alt="Techworm Vending Logo">
-                </div>
+            <h2>Our Story</h2>
+            
+            <div class="logo-container">
+                <img src="logo.jpg" alt="Techworm Vending Logo">
+            </div>
 
+            <div class="content">
                 <p>
-                    Techworm Vending was born from a simple observation: traditional vending machines are stuck in the past. 
-                    We saw people fumbling with coins, dealing with jammed machines, and missing out on the convenience that 
-                    modern technology can provide.
+                    Techworm Vending is revolutionizing the way people access snacks and refreshments. We've 
+                    replaced outdated vending machines with smart, AI-powered refrigerators that make getting 
+                    what you need fast, easy, and hassle-free.
                 </p>
                 <p>
-                    Starting with a single smart refrigerator in a music studio in Pittsburgh, we set out to prove that 
-                    vending could be different. By combining artificial intelligence with a trust-based approach, we've 
-                    created an experience that's as simple as opening your own fridge at home.
+                    Our system is simple: insert or tap your card, open the door, take what you want, and go. 
+                    Our AI automatically detects what you took and charges you accordingly. No buttons to press, 
+                    no products getting stuck, no waiting in line.
                 </p>
                 <p>
-                    Our first machine serves creative professionals who need quick access to refreshments during long 
-                    recording sessions. No interruptions, no hassle – just grab what you need and keep creating. The response 
-                    has been incredible, and we're excited to bring this innovation to more locations.
+                    Starting in Pittsburgh with our first location in a music studio, we're proving that vending 
+                    can be better. We're expanding to offices, gyms, creative spaces, and anywhere people need 
+                    convenient access to refreshments.
                 </p>
             </div>
 
             <div class="machine-showcase">
                 <div class="machine-image">
                     <img src="machine-front.jpg" alt="Techworm Vending Machine">
-                    <div class="machine-caption">
-                        <h4>Our Smart Refrigerators</h4>
-                        <p>Glass-front design for easy browsing</p>
-                    </div>
                 </div>
                 <div class="machine-image">
-                    <img src="machine-open.jpg" alt="Techworm Machine Open">
-                    <div class="machine-caption">
-                        <h4>Always Stocked</h4>
-                        <p>Fresh snacks and drinks available 24/7</p>
-                    </div>
+                    <img src="machine-open.jpg" alt="Machine Stocked with Products">
                 </div>
                 <div class="machine-image">
                     <img src="machine-products.jpg" alt="Product Selection">
-                    <div class="machine-caption">
-                        <h4>Wide Variety</h4>
-                        <p>Something for everyone's taste</p>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="mission">
+    <section>
         <div class="container">
-            <h2 style="text-align: center;">Mission & Vision</h2>
-            <div class="mission-vision">
-                <div class="mission-box">
-                    <h3>🎯 Our Mission</h3>
-                    <p>
-                        To eliminate friction from the vending experience by leveraging AI technology and trust-based systems, 
-                        making refreshments accessible to everyone, anytime, anywhere.
-                    </p>
-                    <p>
-                        We believe that getting a snack or drink shouldn't require fumbling with change, waiting in line, 
-                        or dealing with outdated technology. Our mission is to make vending as seamless as reaching into 
-                        your own refrigerator.
-                    </p>
-                </div>
-                <div class="vision-box">
-                    <h3>🚀 Our Vision</h3>
-                    <p>
-                        To become the leading smart vending solution in workplaces, studios, gyms, and community spaces 
-                        across the country, setting a new standard for convenience and trust in automated retail.
-                    </p>
-                    <p>
-                        We envision a future where AI-powered vending is the norm, not the exception – where technology 
-                        serves humanity by removing obstacles and creating effortless experiences.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="values">
-        <div class="container">
-            <h2 style="text-align: center;">Our Core Values</h2>
-            <div class="values-grid">
+            <h2>What We Believe</h2>
+            <div class="values">
                 <div class="value-card">
-                    <div class="value-icon">🤝</div>
-                    <h3>Trust</h3>
-                    <p>We build our business on mutual trust between us and our customers. Our grab-and-go model only works because we trust you.</p>
+                    <div class="value-icon">⚡</div>
+                    <h3>Simplicity</h3>
+                    <p>Getting a snack or drink should be effortless. We've removed every unnecessary step.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">💡</div>
                     <h3>Innovation</h3>
-                    <p>We constantly push boundaries, using cutting-edge AI technology to solve everyday problems in creative ways.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">⚡</div>
-                    <h3>Simplicity</h3>
-                    <p>The best technology is invisible. We create experiences so simple, you won't even think about the tech behind them.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">🌱</div>
-                    <h3>Growth</h3>
-                    <p>We're committed to continuous improvement – of our technology, our service, and ourselves.</p>
+                    <p>We use cutting-edge AI technology to create experiences that just work.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">🎯</div>
                     <h3>Reliability</h3>
-                    <p>When you need refreshments, we're there. 24/7 availability backed by consistent, dependable service.</p>
+                    <p>Our machines are available 24/7, always stocked, and always working.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">💚</div>
                     <h3>Community</h3>
-                    <p>We support the spaces where people create, work, and gather – from music studios to offices and beyond.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="journey" class="story-section">
-        <div class="container">
-            <h2 style="text-align: center;">Our Journey</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>September 2025</h3>
-                        <p><strong>The Beginning</strong></p>
-                        <p>Techworm Vending officially launches with our first AI-powered smart refrigerator in a Pittsburgh music studio.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Q4 2025</h3>
-                        <p><strong>Validation & Growth</strong></p>
-                        <p>Expanding to additional locations based on customer feedback and proven success of our trust-based model.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>2026</h3>
-                        <p><strong>Market Expansion</strong></p>
-                        <p>Targeting offices, gyms, creative spaces, and co-working environments across the Pittsburgh area and beyond.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>The Future</h3>
-                        <p><strong>Nationwide Presence</strong></p>
-                        <p>Building a network of smart vending solutions that redefine convenience across the United States.</p>
-                    </div>
+                    <p>We serve the spaces where people work, create, and gather together.</p>
                 </div>
             </div>
         </div>
@@ -482,10 +282,10 @@
 
     <section class="cta-section">
         <div class="container">
-            <h2 style="color: white;">Want to Learn More?</h2>
+            <h2 style="color: white;">Want a Machine at Your Location?</h2>
             <p style="font-size: 1.2rem;">
-                Interested in bringing Techworm Vending to your location? Have questions about our technology? 
-                We'd love to hear from you!
+                Bring Techworm Vending to your office, studio, gym, or facility. 
+                Contact us to learn more!
             </p>
             <a href="contact.html" class="cta-button">Get In Touch</a>
         </div>
